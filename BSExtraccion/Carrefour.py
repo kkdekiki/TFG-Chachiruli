@@ -29,7 +29,6 @@ def createDB():
     PRECIO VARCHAR (10))
     """)
     exe.close()
-    print("BYE")
     connection.close()
 
 #Este metodo saca el nombre de la categoria, asi como los codigos necesarios para crear url.
@@ -79,8 +78,8 @@ def getObjectos(alergeno):
             ArticleBrand = ArticleSimple.find('p',{"class":"name-marca"}).a.text.strip()
             ArticleDictionary = {"brand":ArticleBrand,"name": ArticleName,"price":ArticlePrice}
             
-            sqlQuery = "INSERT INTO producto (SUPERFICIE,ALERGENO,CATEGORIA, MARCA,NOMBRE,PRECIO) VALUES (%s,%s,%s, %s,%s,%s)"
-            values = (alergenoAux,element[0],ArticleBrand,ArticleName,ArticlePrice)
+            sqlQuery = "INSERT INTO producto (SUPERFICIE,ALERGENO,CATEGORIA, MARCA,NOMBRE,PRECIO) VALUES (%s,%s,%s,%s,%s,%s)"
+            values = (Superficie,alergenoAux,element[0],ArticleBrand,ArticleName,ArticlePrice)
             mycursor.execute(sqlQuery, values)
     connection.commit()
     mycursor.close()
