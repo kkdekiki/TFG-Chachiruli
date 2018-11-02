@@ -29,7 +29,7 @@ def createDB():
     PRECIO VARCHAR (10))
     """)
     exe.close()
-    print("HELLO")
+    print("BYE")
     connection.close()
 
 #Este metodo saca el nombre de la categoria, asi como los codigos necesarios para crear url.
