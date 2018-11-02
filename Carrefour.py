@@ -20,7 +20,7 @@ def createDB():
     DROP TABLE PRODUCTO
     """)
     exe.execute("""
-    CREATE TABLE PRODUCTO (
+    CREATE TABLE PRODUCTO  (
     SUPERFICIE VARCHAR (50),
     ALERGENO VARCHAR(30),
     MARCA VARCHAR (50),
@@ -29,6 +29,7 @@ def createDB():
     PRECIO VARCHAR (10))
     """)
     exe.close()
+    print("HELLO")
     connection.close()
 
 #Este metodo saca el nombre de la categoria, asi como los codigos necesarios para crear url.
