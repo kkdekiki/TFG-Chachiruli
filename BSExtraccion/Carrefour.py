@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 
 #CONSTANTES
+
 Superficie = 'Carrefour'
 urlCarrefourBase = 'https://www.carrefour.es/supermercado/'
 alergenoSG='sin+gluten'
@@ -76,7 +77,7 @@ def getObjectos(alergeno):
             ArticleName= ArticleSimple.find('h2').a.text.strip()
             ArticlePrice = ArticleSimple.find('p',{"class":"price"}).text.strip()
             ArticleBrand = ArticleSimple.find('p',{"class":"name-marca"}).a.text.strip()
-            ArticleDictionary = {"brand":ArticleBrand,"name": ArticleName,"price":ArticlePrice}
+            #ArticleDictionary = {"brand":ArticleBrand,"name": ArticleName,"price":ArticlePrice}
             
             sqlQuery = "INSERT INTO producto (SUPERFICIE,ALERGENO,CATEGORIA, MARCA,NOMBRE,PRECIO) VALUES (%s,%s,%s,%s,%s,%s)"
             values = (Superficie,alergenoAux,element[0],ArticleBrand,ArticleName,ArticlePrice)
